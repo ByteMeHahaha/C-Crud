@@ -1,0 +1,26 @@
+project-meta:
+  project-name: C-Crud
+  date-started: 2026-09-28
+  last-updated: 2026-09-28
+  languages:
+    - C
+  status: Experimental
+  license: MIT
+  version: 0.0.1
+
+build:
+  dev-environments:
+    - Ubuntu (WSL)
+  target-platforms:
+    - Linux
+  compiler:
+    compiler-name: gcc
+    compiler-version: 13.3.0
+
+team:
+  author: Ethan Kletschke
+  contributors:
+    - name: Ethan Kletschke
+      role: Author and Owner
+      github-username: ByteMeHahaha
+      website: https://ethankportfolio.netlify.app
