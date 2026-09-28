@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+gcc ./src/*.c -o ./bin/C-Crud
