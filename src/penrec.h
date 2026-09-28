@@ -1,0 +1,4 @@
+#ifndef PENREC_H_INCLUDED
+#define PENREC_H_INCLUDED
+
+#endif // PENREC_H_INCLUDED
