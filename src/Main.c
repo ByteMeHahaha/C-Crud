@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include "penrec.h"
+#include "menu_actions.h"
 
 int main(int argc, char *argv[]) {
   // If the first argument supplied is "-v"
