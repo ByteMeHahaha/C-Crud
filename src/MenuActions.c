@@ -1,14 +1,13 @@
+#include <stdio.h>
 #include "menu_actions.h"
 
 /**
  * @brief Creates a new pen to add to the CSV file
- * via the CLI menu. Auto-generates a sequential `pen_id` for the
- * new record.
+ * via the CLI menu.
  *
- * @param new_pen The new pen record to add to the CSV.
+ * @param new_pen The new pen record to add to the CSV file.
  */
 void mna_create(PenRecord new_pen){
-  // TODO -> Implement logic for "create" menu action
 }
 
 /**
