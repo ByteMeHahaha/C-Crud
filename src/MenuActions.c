@@ -23,9 +23,10 @@ void mna_create(PenRecord new_pen){
   FILE *fptr = fopen("./data/pens.csv", "a");
 
   // Write a line to the CSV file
-  fprintf(fptr, "%s,%s,%.2f\n",
+  fprintf(fptr, "%s,%s,%d,%.2f\n",
     new_pen.brand,
     new_pen.model,
+    new_pen.pen_type,
     new_pen.price
   );
 
