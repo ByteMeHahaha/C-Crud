@@ -19,14 +19,14 @@ int main(int argc, char *argv[]) {
     printf("C-Crud v0.0.1\n");
     return 0;
   } else if (strcmp(argv[1], "-c"/* Test create */) == 0) {
-    PenRecord p = {
-      .pen_id = 1,
+    // Define a placeholder pen record
+    PenRecord pen = {
       .brand = "Parker",
       .model = "51",
       .price = 10.00
     };
 
-    mna_create(p);
+    mna_create(pen);
 
     return 0;
   }
