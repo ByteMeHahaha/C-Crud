@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     printf("C-Crud v0.0.2\n");
     return 0;
   } else if (strcmp(argv[1], "-c") == 0) {
-    // Define a placeholder pen record
+    // Define a test pen record
     PenRecord pen = {
       .brand = "Parker",
       .model = "51",
@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
       .price = 10.00
     };
 
+    // Write the test record to the file
     mna_create(pen);
 
     return 0;
