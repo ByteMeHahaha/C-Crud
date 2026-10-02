@@ -8,6 +8,17 @@
  * @param new_pen The new pen record to add to the CSV file.
  */
 void mna_create(PenRecord new_pen){
+  FILE *fptr = fopen("./data/pens.csv", "a");
+
+  // Write a line to the CSV file
+  fprintf(fptr, "%d,%s,%s,%.2f\n",
+    new_pen.pen_id,
+    new_pen.brand,
+    new_pen.model,
+    new_pen.price
+  );
+
+  fclose(fptr);
 }
 
 /**
