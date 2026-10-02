@@ -10,7 +10,7 @@ typedef struct PenRecord {
   char brand[30]; /**< The brand that made the pen */
   char model[40]; /**< The model of the pen */
   double price; /**< The price (in ZAR) for the pen */
-  PenTypes pen_type;
+  PenTypes pen_type; /**< The type of pen */
 } PenRecord;
 
 #endif // PENREC_H_INCLUDED
