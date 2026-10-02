@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <errno.h>
 #include "menu_actions.h"
 
 /**
@@ -8,6 +11,15 @@
  * @param new_pen The new pen record to add to the CSV file.
  */
 void mna_create(PenRecord new_pen){
+  // Attempt to create a "data" directory
+  if (mkdir("data", 0755) == -1 && errno != EEXIST) {
+    // Print mkdir's error if it fails and if the
+    // directory doesn't already exist
+    perror("mkdir");
+    return;
+  }
+
+  // Open the CSV file for appending (creating if doesn't exist)
   FILE *fptr = fopen("./data/pens.csv", "a");
 
   // Write a line to the CSV file
@@ -18,6 +30,7 @@ void mna_create(PenRecord new_pen){
     new_pen.price
   );
 
+  // Close the file
   fclose(fptr);
 }
 
