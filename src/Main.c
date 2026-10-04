@@ -1,35 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "penrec.h"
 #include "menu_actions.h"
 
 int main(int argc, char *argv[]) {
   // If no command line arguments were provided
-  if (argv[1] == NULL) {
-    // TODO -> Uncomment this code and remove the other code
-    // printf("Usage: %s [-c | -v]\n", argv[0]);
-    // return 1;
+  if (argv[1] != NULL) {
+    // If the first argument supplied is "-v"
+    if (strcmp(argv[1], "-v") == 0) {
+      printf("C-Crud v0.0.2\n");
+      return 0;
+    } else if (strcmp(argv[1], "-c") == 0) {
+      // Define a test pen record
+      PenRecord pen = {
+        .brand = "Parker",
+        .model = "51",
+        .pen_type = 1,
+        .price = 10.00
+      };
 
-    printf("This is a prototype of C-Crud. It does nothing yet.\n");
-    return 1;
+      // Write the test record to the file
+      mna_create(pen);
+
+      exit(EXIT_SUCCESS);
+    }
   }
 
-  // If the first argument supplied is "-v"
-  if (strcmp(argv[1], "-v") == 0) {
-    printf("C-Crud v0.0.2\n");
-    return 0;
-  } else if (strcmp(argv[1], "-c") == 0) {
-    // Define a test pen record
-    PenRecord pen = {
-      .brand = "Parker",
-      .model = "51",
-      .pen_type = 1,
-      .price = 10.00
-    };
-
-    // Write the test record to the file
-    mna_create(pen);
-
-    return 0;
-  }
+  // If no command line arguments are passed, display this message
+  printf("This is a prototype of C-Crud. It does nothing yet.\n");
+  // Exit thie program with a failure code
+  return EXIT_FAILURE;
 }
