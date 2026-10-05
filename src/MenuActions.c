@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <errno.h>
@@ -31,11 +32,29 @@ void mna_create(PenRecord new_pen){
     exit(EXIT_FAILURE);
   }
 
+  // Readable CSV label for pen type
+  char pen_type[35];
+
+  switch (new_pen.pen_type) {
+    case 0:
+      strcpy(pen_type, "Other");
+      break;
+    case 1:
+      strcpy(pen_type, "Fountain Pen");
+      break;
+    case 2:
+      strcpy(pen_type, "Ballpoint Pen");
+      break;
+    case 3:
+      strcpy(pen_type, "Rollerball Pen");
+      break;
+  }
+
   // Write a line to the CSV file
-  fprintf(fptr, "%s,%s,%d,%.2f\n",
+  fprintf(fptr, "%s,%s,%s,%.2f\n",
     new_pen.brand,
     new_pen.model,
-    new_pen.pen_type,
+    pen_type,
     new_pen.price
   );
 

@@ -26,6 +26,7 @@ int main(int argc, char *argv[]) {
       // Write the test record to the file
       mna_create(pen);
 
+      // Successfully exit the program
       exit(EXIT_SUCCESS);
     }
   }

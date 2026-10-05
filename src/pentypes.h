@@ -2,14 +2,13 @@
 #define PEN_TYPES_H_INCLUDED
 
 /**
- * @brief The different pen types available
- *
+ * @brief The different pen types available.
  */
 typedef enum PenTypes {
-  FOUNTAIN = 1,
+  OTHER,
+  FOUNTAIN,
   BALLPOINT,
-  ROLLERBALL,
-  OTHER
+  ROLLERBALL
 } PenTypes;
 
 #endif // PEN_TYPES_H_INCLUDED
