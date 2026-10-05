@@ -7,7 +7,8 @@
 
 /**
  * @brief Creates a new pen to add to the CSV file
- * via the CLI menu.
+ * via the CLI menu. Appends the new pen at the end of
+ * the CSV file.
  *
  * @param new_pen The new pen record to add to the CSV file.
  */
@@ -46,27 +47,27 @@ void mna_create(PenRecord new_pen){
  * @brief Reads an existing pen record from the CSV file. Returns the
  * pen record with the specified ID.
  *
- * @param pen_id The ID of the pen record to fetch.
+ * @param line_num The line number of the pen record to fetch.
  */
-PenRecord mna_read(int pen_id){
+PenRecord mna_read(int line_num){
   // TODO -> Implement logic for "read" menu action
 }
 
 /**
  * @brief Overwrites an existing pen record with a new pen record
  *
- * @param pen_id The existing pen's ID
+ * @param line_num The line number in the CSV file
  * @param new_pen The new pen's data
  */
-void mna_update(int pen_id, PenRecord new_pen){
+void mna_update(int line_num, PenRecord new_pen){
   // TODO -> Implement logic for "update" menu action
 }
 
 /**
  * @brief Deletes an existing pen.
  *
- * @param pen_id The ID of the pen to delete
+ * @param line_num The line number in the CSV file
  */
-void mna_delete(int pen_id){
+void mna_delete(int line_num){
   // TODO -> Implement logic for "delete" menu action
 }
