@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <errno.h>
@@ -21,6 +22,13 @@ void mna_create(PenRecord new_pen){
 
   // Open the CSV file for appending (creating if doesn't exist)
   FILE *fptr = fopen("./data/pens.csv", "a");
+
+  // If the file couldn't be opened (returned a NULL pointer)
+  if (fptr == NULL) {
+    // Exit the program with an error message
+    perror("Could not open file \"pens.csv\"");
+    exit(EXIT_FAILURE);
+  }
 
   // Write a line to the CSV file
   fprintf(fptr, "%s,%s,%d,%.2f\n",
