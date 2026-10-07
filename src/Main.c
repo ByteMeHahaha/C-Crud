@@ -28,6 +28,21 @@ int main(int argc, char *argv[]) {
 
       // Successfully exit the program
       exit(EXIT_SUCCESS);
+    } else if (strcmp(argv[1], "-r") == 0) {
+      PenRecord pn;
+      int line_num = 1;
+
+      if (mna_read(line_num, &pn)) {
+        printf("Line #%d\n", line_num);
+        printf("========================\n");
+        printf("%s %s, %s\n", pn.brand, pn.model, pentype_to_str(pn.pen_type));
+        printf("Price: %.2f\n========================\n", pn.price);
+
+        exit(EXIT_SUCCESS);
+      } else {
+        printf("Pen not found at line %d\n", line_num);
+        exit(EXIT_FAILURE);
+      }
     }
   }
 

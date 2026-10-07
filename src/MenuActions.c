@@ -88,6 +88,8 @@ bool mna_read(int line_num, PenRecord *res){
         strcpy(res->model, model);
         res->pen_type = str_to_pentype(type);
         res->price = atof(price);
+
+        return true;
       }
     }
   } else {
@@ -96,6 +98,8 @@ bool mna_read(int line_num, PenRecord *res){
   }
 
   fclose(csv_fptr);
+
+  return false;
 }
 
 /**
