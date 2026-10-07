@@ -1,9 +1,9 @@
 project-meta:
   project-name: C-Crud
   date-started: 2026-09-28
-  last-updated: 2026-10-05
+  last-updated: 2026-10-07
   languages:
-    - C
+    - C (C23)
   status: Experimental
   license: MIT
   version: 0.0.2
