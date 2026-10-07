@@ -64,12 +64,38 @@ void mna_create(PenRecord new_pen){
 
 /**
  * @brief Reads an existing pen record from the CSV file. Returns the
- * pen record with the specified ID.
+ * pen record with the specified line number.
  *
  * @param line_num The line number of the pen record to fetch.
  */
-PenRecord mna_read(int line_num){
-  // TODO -> Implement logic for "read" menu action
+bool mna_read(int line_num, PenRecord *res){
+  FILE *csv_fptr = fopen("./data/pens.csv", "r");
+  char csv_line[100];
+
+  int current_ln = 0;
+
+  if (csv_fptr != NULL) {
+    while (fgets(csv_line, sizeof(csv_line), csv_fptr)) {
+      current_ln++;
+
+      if (current_ln == line_num) {
+        char *brand = strtok(csv_line, ",");
+        char *model = strtok(NULL, ",");
+        char *type = strtok(NULL, ",");
+        char *price = strtok(NULL, ",");
+
+        strcpy(res->brand, brand);
+        strcpy(res->model, model);
+        res->pen_type = str_to_pentype(type);
+        res->price = atof(price);
+      }
+    }
+  } else {
+    perror("Could not open \"pens.csv\"");
+    exit(EXIT_FAILURE);
+  }
+
+  fclose(csv_fptr);
 }
 
 /**

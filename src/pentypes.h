@@ -11,4 +11,6 @@ typedef enum PenTypes {
   ROLLERBALL
 } PenTypes;
 
+PenTypes str_to_pentype(char[]);
+
 #endif // PEN_TYPES_H_INCLUDED
