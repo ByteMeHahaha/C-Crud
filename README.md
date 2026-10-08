@@ -2,6 +2,8 @@
 
 An app written in C that performs CRUD operations on a file.
 
+**_This is a deprecated app! It's public as a skills reference only._**
+
 - Author: Ethan Kletschke
 - Version: `0.0.2`
 - Developed on: Ubuntu (WSL2)
@@ -11,11 +13,11 @@ An app written in C that performs CRUD operations on a file.
 ---
 
 - [C-Crud](#c-crud)
-  - [What This App Will Do](#what-this-app-will-do)
+  - [What This App Would Have Done](#what-this-app-would-have-done)
 
 ---
 
-## What This App Will Do
+## What This App Would Have Done
 
 `C-Crud` is a simple app that will read from and write pen data to a CSV file.
 It will append new pen data to the end of the CSV file, read a specific line
